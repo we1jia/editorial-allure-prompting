@@ -3,3 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 .env
+!README.md
+!README.zh-CN.md
+!SKILL.md
