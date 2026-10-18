@@ -60,11 +60,16 @@ AI 视觉模型的安全审查主要通过两道关卡运作，任何一处失�
 
 本技能覆盖从概念生图、参考图逆向提取、视频动态运镜到报错修复的完整生命周期：
 
-### 模式 A：零基础文生图构建（Text-to-Image Keyframe）
-严格套用**万能五段式公式**组装提示词：
-```text
-[1. 商业/艺术定性] + [2. 人物神态与微动作] + [3. 高级剪裁材质服装] + [4. 环境与轮廓光影] + [5. 摄影机与胶片参数]
-```
+### 模式 A：双轨美学定性（高定杂志风 vs. 真实抓拍白描风）
+不要把所有需求都套进 `Vogue high-fashion editorial`。在 AI 模型权重中，`Vogue / High-fashion` 默认关联**纤瘦骨感的超模纸片人体态（Slender runway model）与距离感摆拍**。必须根据用户想要的感觉选择路线：
+
+1. **轨道 1 — 高定电影杂志风（Haute Couture Editorial）**：适合晚礼服、暗调氛围、清冷高级感。
+   - 公式：`[商业/艺术定性] + [人物神态与微动作] + [高级剪裁材质服装] + [环境与轮廓光影] + [摄影机与胶片参数]`
+2. **轨道 2 — 真实手机抓拍与量化白描风（Candid Smartphone Realism & Quantitative Spec）**：适合日常通勤、街头自拍、丰润成熟体态与强烈生活临场感。
+   - **去掉杂志与胶片词**：改用 `真实手机自拍摄影 (Authentic smartphone selfie photography)`、`24mm 等效广角镜头`、`自然曝光与轻微广角透视畸变`。
+   - **丰润体态客观白描（替代干瘪超模词）**：不使用情绪化违规词，而是客观描述连续的体态曲线：`丰润匀称的成熟体态 (full, well-proportioned mature physique)`、`饱满的上围轮廓与收紧的腰线 (full upper contour tapering into a cinched waist)`、`圆润的臀胯与结实柔和的大腿线条 (rounded hip line and toned, soft thigh contours)`。
+   - **穿法量化指令（替代抽象形容词）**：直接给出可执行的物理穿法刻度，如 `紧身 OL 白衬衫，领口纽扣解开 2-3 颗 (fitted OL white shirt with top 2-3 buttons undone)`、`修身包臀短裙，裙摆停留在大腿上段 (fitted pencil mini skirt resting at upper thigh)`、`灰色半透明丝袜 (semi-sheer grey hosiery)`。
+   - **空间几何与生活化背景锚定**：精确指定机位与全身入镜关系（如 `左臂向左上伸直举起手机俯拍，头顶到双脚完整入镜，低头看向脚下，雨风吹起长发横向掠过脸部`），并在背景加入高真实度街头细节（如 `复古电动踏板车、白色 SUV、湿润石材路面积水涟漪`）以彻底消除 AI 假图感。
 
 ### 模式 B：参考图逆向提炼与安全重构（Image-to-Prompt Sanitization）
 当用户上传包含擦边穿搭、高危体位甚至成人水印的参考图要求生成提示词时，执行**三层剥离与重构**：

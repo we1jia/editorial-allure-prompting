@@ -69,8 +69,14 @@ flowchart TB
 
 This skill extends beyond single-frame text-to-image prompting to cover four end-to-end production workflows:
 
-### Pipeline I — Zero-Shot Keyframe Synthesis
-Compiles abstract aesthetic goals into a deterministic **5-Part Editorial Syntax**, anchoring outputs in the visual language of master photographers (`Helmut Newton`, `Peter Lindbergh`) and auteurs (`Wong Kar-wai`, `Tom Ford`) to eliminate synthetic "influencer plastic slop."
+### Pipeline I — Dual-Track Synthesis: Haute Couture Editorial vs. Candid Quantitative Realism
+Never force every request into `Vogue editorial`. In model weights, `Vogue / High-fashion` strongly biases toward **slender, flat runway model physiques and staged studio distance**. Select the track that matches your target tension:
+- **Track A (Haute Couture Editorial)**: Best for evening gowns, low-key chiaroscuro lighting, and cool luxury distance (`Vogue editorial + 85mm lens + Kodak Portra 400`).
+- **Track B (Candid Smartphone Realism & Quantitative Spec)**: Best for street selfies, office-lady (OL) attire, full mature curves, and immediate real-life presence. **Drop magazine/film keywords** and apply four white-box techniques:
+  1. **Smartphone Wide-Angle Geometry**: `Authentic smartphone selfie photography`, `24mm wide-angle high-angle close-up`, `foreground arm foreshortened from bottom-left, full head-to-toe framing`.
+  2. **Objective Physique White-Boxing**: Replace emotional slang with continuous anatomical contour descriptions: `full, well-proportioned mature figure, naturally full upper contour, cinched waist, rounded hips, and toned soft thigh lines`.
+  3. **Quantitative Garment Calibration**: Specify exact physical wearing states instead of vague adjectives: `form-fitting white office shirt with top 2-3 buttons undone`, `tight pencil mini skirt ending at the upper thigh`, `semi-sheer grey hosiery`.
+  4. **Hair-Obscured Gaze & Street Anchors**: `Looking down at feet with windblown hair sweeping sideways across the face` + hyper-specific mundane street details (`retro pink-and-white electric scooter, white SUV, rain ripples on wet stone pavement`) to eliminate synthetic AI artifacts.
 
 ### Pipeline II — Reference Image De-coupling & Sanitization (Image-to-Prompt)
 When extracting prompts from a reference image that contains risky attire, suggestive postures, or watermarks, execute **3-Layer Decoupling**:
