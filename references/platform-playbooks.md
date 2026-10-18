@@ -98,3 +98,18 @@
 1. **剥离违规层（Strip）**：剔除所有露骨动作、性暗示体位、成人字幕水印与廉价室内平光。
 2. **保留美学基因层（Preserve）**：精准提取参考图中的**服装色彩与印花**（如黑底绯红花卉）、**核心材质与配饰**（如挂脖真丝、微透暗色裤袜、水晶绕踝高跟鞋）以及**场景基底**（如现代酒店深灰粗花呢贵妃榻）。
 3. **高定重构层（Re-choreograph）**：将原本的低俗动作重构为**古典斜倚（reclining with languid elegance）**、**重心偏移站姿（contrapposto stance）**或**王家卫式克制对视（sharing an enigmatic gaze in chiaroscuro lighting）**，输出 100% 合规的高级剧照提示词。
+
+---
+
+## 7. 双人极近距离垫图转视频防拦截法则（Couple Image-to-Video Guard）
+
+当使用双人极近距离对视、手触下巴或斜倚沙发的图片（如浪漫电影剧照）进行图生视频时，视频模型的默认动作先验（Motion Prior）极易自动生成“向前接吻”或“身体下压”动作，从而在 80%~90% 进度触发后置亲密行为拦截。必须采用以下三项控制：
+
+1. **反向锁死距离（Freeze or Subtle Pull-Back）**
+   - 严禁出现 `leaning closer`、`kissing`、`caressing body` 等缩小两人距离的词。
+   - 必须明确指令**保持悬停凝固**或**欲迎还休地微撤半寸**：`maintaining poised sculptural stillness, holding an unblinking magnetic gaze without moving closer` 或 `slowly tilting her chin slightly back with an enigmatic smile`。
+2. **推镜切入面部特写（Push-in to Reduce Skin Ratio）**
+   - 使用 `Slow dolly push-in framing toward a medium close-up of their eyes and her collarbone`，随着镜头推进，下半身腿部线条自然移出画面或进入浅景深虚化区，使后置分类器检测到的露肤面积逐帧下降。
+3. **动态转移至发丝与光影（Ambient Micro-Motion Only）**
+   - 锁定下半身静止（`lower silhouette remains completely still`），仅让环境暖光闪烁与发丝微动：`warm tungsten lamp light softly glinting on crystal heels and silk floral fabric, a single strand of dark hair gently shifting`。
+
