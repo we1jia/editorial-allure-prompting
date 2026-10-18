@@ -4,5 +4,5 @@ __pycache__/
 *$py.class
 .env
 !README.md
-!README.zh-CN.md
+!README.en.md
 !SKILL.md
